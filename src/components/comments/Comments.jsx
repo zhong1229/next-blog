@@ -22,8 +22,8 @@ const fetcher = async (url) => {
 
 const Comments = ({ postSlug }) => {
   const { data, mutate, isLoading } = useSWR(
-    // ` http://risingsource.top/api/comments?postSlug=${postSlug}`,
-    ` http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    ` http://risingsource.top/api/comments?postSlug=${postSlug}`,
+    // ` http://localhost:3000/api/comments?postSlug=${postSlug}`,
     fetcher
   );
 
@@ -35,8 +35,9 @@ const Comments = ({ postSlug }) => {
   });
 
   const handleSubmit = async () => {
-    // const res = await fetch("http://risingsource.top/api/comments", {
-    const res = await fetch(" http://localhost:3000/api/comments", {
+    // console.log(fromState);
+    const res = await fetch("http://risingsource.top/api/comments", {
+      // const res = await fetch(" http://localhost:3000/api/comments", {
       method: "POST",
       body: JSON.stringify({
         ...fromState,
@@ -48,8 +49,9 @@ const Comments = ({ postSlug }) => {
       toast.error(data.message);
       return false;
     }
-    mutate();
     setFromState({ name: "", desc: "", userEmail: "", website: "" });
+    mutate();
+    // document.querySelector("#textareaId").value = "";
   };
   const genNickName = () => {
     // 获取指定范围内的随机数
@@ -82,7 +84,11 @@ const Comments = ({ postSlug }) => {
   };
 
   const changeMouse = () => {
-    setFromState({ name: genNickName(), userEmail: "admin123@zh.com" });
+    setFromState({
+      ...fromState,
+      name: genNickName(),
+      userEmail: "admin123@zh.com",
+    });
   };
 
   return (
@@ -127,6 +133,7 @@ const Comments = ({ postSlug }) => {
             <input
               type="text"
               placeholder="网站地址(可选)"
+              value={fromState.website}
               onChange={(e) =>
                 setFromState({ ...fromState, website: e.target.value })
               }
