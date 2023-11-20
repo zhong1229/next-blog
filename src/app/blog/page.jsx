@@ -3,7 +3,7 @@ import styles from "./blogPage.module.css";
 import Menu from "@/components/Menu/Menu";
 import Image from "next/image";
 import toast from "react-hot-toast";
-import Bubbles from "@/components/bubbles/bubbles";
+import Bubbles from "@/components/bubbles/Bubbles";
 
 const getData = async (cat) => {
   const res = await fetch("http://risingsource.top/api/categories/" + cat, {
