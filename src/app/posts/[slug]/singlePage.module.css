@@ -1,0 +1,107 @@
+.infoContainer {
+  height: 85vh;
+}
+
+.textContainer {
+  position: absolute;
+  bottom: 220px;
+  color: white;
+}
+
+.title {
+  font-size: 54px;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+.tags {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+.cat {
+  transition: all 0.3s;
+}
+
+.cat:hover {
+  color: crimson;
+}
+
+.items {
+  display: flex;
+  gap: 1rem;
+}
+
+.item {
+  padding: 1.5em;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: saturate(1.8) blur(10px);
+  border-radius: 0.5em;
+  line-height: 1.7;
+}
+.label {
+  font-size: 12px;
+}
+.mos {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.imageContainer {
+  position: absolute;
+  width: 100vw;
+  height: 85vh;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.wavesContainer {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -11px;
+  z-index: 5;
+}
+.image {
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  gap: 50px;
+}
+.description {
+  width: 100%;
+}
+.post {
+  flex: 5;
+  margin-top: 60px;
+}
+
+@media screen and (max-width: 1536px) {
+  .title {
+    font-size: 44px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .title {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 26px;
+  }
+  .post {
+    width: 100%;
+  }
+  .description p {
+    font-size: 16px;
+    text-wrap: wrap;
+  }
+}

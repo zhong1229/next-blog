@@ -1,0 +1,7 @@
+.content {
+  display: flex;
+  gap: 50px;
+}
+.fillContainer {
+  height: 100vh;
+}

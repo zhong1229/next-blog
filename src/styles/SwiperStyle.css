@@ -1,0 +1,158 @@
+.mySwiper2 .dark-layer:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.mySwiper2 .imageContainer {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+  pointer-events: none;
+  position: relative;
+}
+.mySwiper2 .imageContainer .image {
+  object-fit: cover;
+}
+.mySwiper2 .textContainer {
+  position: absolute;
+  top: 25%;
+  color: var(--white-color);
+  margin: 0 200px;
+  transition: 0.3s ease;
+}
+.mySwiper2 .textContainer .title {
+  font-size: 4em;
+  font-weight: 700;
+  text-shadow: var(--text-shadow);
+  margin-bottom: 20px;
+  transform: translateY(-50px);
+  opacity: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.mySwiper2 .textContainer .title .span {
+  font-size: 0.3em;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+.mySwiper2 .textContainer .textContent {
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  text-shadow: var(--text-shadow);
+  padding: 20px;
+  border-radius: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--box-shadow);
+  transform: translatex(-80px);
+  opacity: 0;
+}
+
+.mySwiper2 .textContainer .readBtn {
+  border: none;
+  outline: none;
+  background: var(--white-color);
+  color: #222;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 8px 25px;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  gap: 6px;
+  transform: translatex(50px);
+  opacity: 0;
+}
+.swiper-slide-active .textContainer .readBtn,
+.swiper-slide-active .textContainer .title,
+.swiper-slide-active .textContainer .textContent {
+  transform: translatex(0);
+  opacity: 1;
+  transition: 1s ease;
+  transition-delay: 0.3s;
+  transition-property: transform, opacity;
+}
+.mySwiper2 .icons {
+  transition: 0.3s ease;
+}
+
+.mySwiper2 .readBtn:hover .icons {
+  transform: translateX(5px);
+}
+.mySwiper {
+  z-index: 777;
+  position: absolute;
+  bottom: 7em;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s ease;
+}
+.mySwiper .swiper-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 10px 3px;
+  border-radius: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--box-shadow);
+  width: max-content;
+}
+.mySwiper .swiper-wrapper .swiper-slide {
+  width: 50px !important;
+  height: 35px;
+  margin: 0 5px;
+}
+.mySwiper .swiper-wrapper .swiper-slide .swiper-imageContainer {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.swiper-slide-thumb-active {
+  border: 2px solid var(--white-color);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1100px) {
+  .swiper-slide .textContainer {
+    margin: 0 120px 0 50px;
+  }
+  .mySwiper {
+    bottom: 4em;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .swiper-slide .textContainer {
+    margin: 0 70px 0 20px;
+  }
+  .swiper-slide .textContainer .title {
+    font-size: 3em;
+  }
+  .swiper-slide .textContainer .title .span {
+    font-size: 0.35em;
+  }
+  .swiper-slide .textContainer .textContent {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .mySwiper {
+    bottom: 6em;
+  }
+}
