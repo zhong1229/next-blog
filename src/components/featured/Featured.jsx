@@ -8,7 +8,7 @@ import { FaBilibili, FaQq } from "react-icons/fa6";
 import Image from "next/image";
 
 const getData = async (sort) => {
-  const res = await fetch(`http://localhost:3000/api/posts?sort=${sort}`, {
+  const res = await fetch(`http://risingsource.top/api/posts?sort=${sort}`, {
     cache: "no-store",
   });
   if (!res.ok) {

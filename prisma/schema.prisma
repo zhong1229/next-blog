@@ -90,7 +90,7 @@ model Comment {
   userEmail String
   img       String
   name      String
-  website   String
+  website   String?
   postSlug  Int
   post      Post     @relation(fields: [postSlug], references: [slug])
 }

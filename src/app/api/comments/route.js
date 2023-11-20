@@ -32,6 +32,13 @@ export const POST = async (req) => {
 
   try {
     const body = await req.json();
+    const { name, desc, userEmail } = body;
+    if (!name || !desc || !userEmail) {
+      return new NextResponse(
+        JSON.stringify({ message: "评论失败" }, { status: 500 })
+      );
+    }
+
     const comment = await prisma.comment.create({
       data: { ...body, img: `/avatar/${randomInteger}.png` },
     });

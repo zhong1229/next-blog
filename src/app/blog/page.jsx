@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import Bubbles from "@/components/bubbles/bubbles";
 
 const getData = async (cat) => {
-  const res = await fetch("http://localhost:3000/api/categories/" + cat, {
+  const res = await fetch("http://risingsource.top/api/categories/" + cat, {
     cache: "no-store",
   });
 

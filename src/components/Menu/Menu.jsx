@@ -5,7 +5,7 @@ import MenuCategories from "../menuCategories/MenuCategories";
 import Image from "next/image";
 
 const getData = async (sort) => {
-  const res = await fetch(`http://localhost:3000/api/posts?sort=${sort}`);
+  const res = await fetch(`http://risingsource.top/api/posts?sort=${sort}`);
 
   if (!res.ok) {
     throw new Error("失败");

@@ -6,7 +6,7 @@ import { AiOutlineTags, AiFillClockCircle, AiFillCrown } from "react-icons/ai";
 import Link from "next/link";
 import Menu from "@/components/Menu/Menu";
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const res = await fetch(`http://risingsource.top/api/posts/${slug}`, {
     cache: "no-store",
   });
 

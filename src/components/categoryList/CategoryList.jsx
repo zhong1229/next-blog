@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { CssStyleList } from "@/utils/cssList";
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const res = await fetch("http://risingsource.top/api/categories", {
     cache: "no-store",
   });
 

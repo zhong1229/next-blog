@@ -4,7 +4,7 @@ import styles from "./menuCategories.module.css";
 
 import { CssStyleList } from "@/utils/cssList";
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories");
+  const res = await fetch("http://risingsource.top/api/categories");
 
   if (!res.ok) {
     throw new Error("失败");

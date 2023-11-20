@@ -5,6 +5,7 @@ import Image from "next/image";
 import useSWR from "swr";
 import { useState } from "react";
 import { AiFillRedditCircle } from "react-icons/ai";
+import toast from "react-hot-toast";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -21,7 +22,8 @@ const fetcher = async (url) => {
 
 const Comments = ({ postSlug }) => {
   const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    // ` http://risingsource.top/api/comments?postSlug=${postSlug}`,
+    ` http://localhost:3000/api/comments?postSlug=${postSlug}`,
     fetcher
   );
 
@@ -33,19 +35,21 @@ const Comments = ({ postSlug }) => {
   });
 
   const handleSubmit = async () => {
-    await fetch("http://localhost:3000/api/comments", {
+    // const res = await fetch("http://risingsource.top/api/comments", {
+    const res = await fetch(" http://localhost:3000/api/comments", {
       method: "POST",
       body: JSON.stringify({
         ...fromState,
         postSlug: parseInt(decodeURIComponent(postSlug)),
       }),
     });
+    const data = await res.json();
+    if (data.message) {
+      toast.error(data.message);
+      return false;
+    }
     mutate();
-    document.getElementById("textareaId").value = "";
-    const inputs = document.querySelectorAll("input");
-    inputs.forEach((item) => {
-      item.value = "";
-    });
+    setFromState({ name: "", desc: "", userEmail: "", website: "" });
   };
   const genNickName = () => {
     // 获取指定范围内的随机数
@@ -99,6 +103,7 @@ const Comments = ({ postSlug }) => {
           rows="8"
           maxLength="65525"
           id="textareaId"
+          value={fromState.desc}
           onChange={(e) => setFromState({ ...fromState, desc: e.target.value })}
         />
         <div className={styles.infoContainer}>
