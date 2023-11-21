@@ -79,6 +79,7 @@
 .post {
   flex: 5;
   margin-top: 60px;
+  max-width:70%
 }
 
 @media screen and (max-width: 1536px) {
@@ -92,6 +93,9 @@
   }
 }
 @media screen and (max-width: 1024px) {
+  .post{
+    max-width: 100%;
+  }
 }
 @media screen and (max-width: 640px) {
   .title {
